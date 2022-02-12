@@ -1,7 +1,7 @@
 package bsu.rfe.java.group10.lab6.Kotova.B4;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.lang.*;
+
 public class BouncingBall implements Runnable{
     private static final int MAX_RADIUS = 40;
     // Минимальный радиус, который может иметь мяч
@@ -68,6 +68,7 @@ public class BouncingBall implements Runnable{
 // Если движение разрешено - управление будет возвращено
 // В противном случае - активный поток заснѐт
                 field.canMove(this);
+                // эффект "наждачки"
                 if (x + speedX <= radius) {
                     if (enableMinimaze) {
                         radius -= minimazeRate;
@@ -81,6 +82,7 @@ public class BouncingBall implements Runnable{
                     speedX = -speedX;
                     x = radius;
                 } else
+                    // эффект "наждачки"
                 if (x + speedX >= field.getWidth() - radius) {
                     if (enableMinimaze) {
                         radius -= minimazeRate;
@@ -94,6 +96,7 @@ public class BouncingBall implements Runnable{
                     speedX = -speedX;
                     x = new Double(field.getWidth() - radius).intValue();
                 } else
+                    // эффект "наждачки"
                 if (y + speedY <= radius) {
                     if (enableMinimaze) {
                         radius -= minimazeRate;
@@ -107,6 +110,7 @@ public class BouncingBall implements Runnable{
                     speedY = -speedY;
                     y = radius;
                 } else
+                    // эффект "наждачки"
                 if (y + speedY >= field.getHeight() - radius) {
                     if (enableMinimaze) {
                         radius -= minimazeRate;
