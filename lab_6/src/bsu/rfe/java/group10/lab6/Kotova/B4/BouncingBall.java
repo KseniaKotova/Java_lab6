@@ -19,6 +19,7 @@ public class BouncingBall implements Runnable{
     private double speedX;
     private double speedY;
 
+    //переменные для уменьшения шарика из-за эффекта "наждачки"
     private boolean enableMinimaze = false;
     private int minimazeRate = 5;
 
